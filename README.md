@@ -63,3 +63,37 @@ Some common tasks that can be handled by the init script (an other [custom comma
 This repo is intended for quick start demos and includes a hardcoded value for `hash_salt` in `settings.php`.  
 If you are basing your project code base on this repo, make sure you regenerate and update the `hash_salt` value.  
 A new value can be generated with `drush ev '$hash = Drupal\Component\Utility\Crypt::randomBytesBase64(55); print $hash . "\n";'` 
+
+
+## Commands:
+To register the container service
+`$az provider register -n Microsoft.ContainerService`
+
+Create Resource group:
+`$az group create –name jani-aks – location eastus`
+
+To show az group list
+`$az grop list`
+
+`$az aks create –resource-group jani-aks –name kubelive –name-count 1 – generate-ssh-keys`
+
+`$az aks list`
+`$az aks install-cli` 
+`$az aks get-credentials –resource-group jani-aks –name kubelive`
+
+`$kubectl get nodes`
+`$kubectl get cs` 
+
+`$kubectl cluster-info` 
+
+`$kubectl create -f azure_vote.yaml`
+
+##To check if the pols are created: 
+`$kubectl get po –watch` 
+
+`$kubectl get svc –watch` 
+
+##To create a new deployment:
+`$kubectl run –image=nginx myweb`
+`$kubectl get deploy`
+`$kubectl get po` 
